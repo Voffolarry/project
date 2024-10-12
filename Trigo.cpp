@@ -1,6 +1,6 @@
 #include <iostream>
 
-
+//function prototype declaration
 double factorial(int n);
 double cosine_x(double x, int limit );
 double sine_x(double x, int limit);
@@ -12,17 +12,16 @@ int main( int argc, char**argv){
 	double x;
 	std::cout << "Enter the angle in degrees: "<<std::endl;
 	std::cin >> x;
-	double a = radians(x);
+	double a = radians(x);//calling the function that converts my angle to radians
 
 	std::cout << " The value of sin(x) is: " << sine_x(a, 10) <<std::endl;
 	std::cout << " The value of cos(x) is: " << cosine_x(a, 10) <<std::endl;
 	std::cout << " The value of tan(x) is: " << tangent_x(a, 10) <<std::endl;
 
-
-
     return 0;
 }
 
+//factorial function
 double factorial(int n){
     double result=1.0;
 	for(int i=2;i<=n;i++){
@@ -31,6 +30,7 @@ double factorial(int n){
 		 return result;
 }
 
+//Power function
 int power(int num, int to_pow){
      int res = 1;
 	 	int i;
@@ -41,6 +41,7 @@ int power(int num, int to_pow){
 	return res;
 }
 
+//Radians function
 double radians(double x){
 	const float pi = 3.141592654;
 	double rad = x * pi / 180;
@@ -48,6 +49,7 @@ double radians(double x){
 return rad;
 }
 
+//cosine function
 double cosine_x(double x, int limit = 10){
 		 double cos_x = 0.0;
 		 for(int n = 0; n < limit ; n++){
@@ -57,6 +59,7 @@ double cosine_x(double x, int limit = 10){
 		return cos_x;
 }
 
+//sine function
 double sine_x(double x, int limit = 10){
 		 double sin_x = 0.0;
 		 for(int n = 0; n < limit ; n++){
@@ -66,6 +69,7 @@ double sine_x(double x, int limit = 10){
 		return sin_x;
 }
 
+//tangent function
 double tangent_x(double x, int limit = 10){
 		double tan_x = sine_x(x, limit) / cosine_x(x, limit); 
 		return tan_x;
